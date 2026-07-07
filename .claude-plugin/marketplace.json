@@ -1,0 +1,12 @@
+{
+  "name": "alphai",
+  "description": "AlphaAI — AI-enriched financial news, SEC Form 4 insider trades and market signals for AI agents",
+  "owner": { "name": "Mikhail Makeev" },
+  "plugins": [
+    {
+      "name": "alphai",
+      "source": "./",
+      "description": "AI-enriched financial news, SEC Form 4 insider trades & market signals for your agent — hosted AlphaAI MCP + ready-made skills"
+    }
+  ]
+}
