@@ -56,6 +56,27 @@ OAuth on connect — your browser opens to authorize (re-authenticate any time
 with `/mcp`). (MCP only, without the plugin:
 `claude mcp add --transport http alphai https://mcp.alphai.io/mcp`.)
 
+### Headless (n8n, bots, CI)
+
+No browser on the box? The same `ak_live_` API keys that call the AlphaAI
+REST API also authenticate the MCP server. Send one as a static Bearer
+header and skip OAuth entirely:
+
+```json
+{
+  "mcpServers": {
+    "alphai": {
+      "url": "https://mcp.alphai.io/mcp",
+      "headers": { "Authorization": "Bearer ak_live_YOUR_KEY" }
+    }
+  }
+}
+```
+
+Create a key at [alphai.io/account](https://alphai.io/account); ready-made
+recipes for n8n, Claude Code, and the SDKs are on
+[alphai.io/mcp](https://alphai.io/mcp).
+
 ### Any Open Plugins host
 
 ```
