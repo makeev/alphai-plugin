@@ -8,7 +8,7 @@ compatible host.
 Every article in the AlphaAI feed is pre-analyzed at ingest: per-ticker impact,
 a category, and a 1–10 relevance score. SEC Form 4 insider filings become
 scored, structured events minutes after they hit EDGAR. This plugin wires that
-feed into your agent with zero glue code — OAuth on first tool call, no API key
+feed into your agent with zero glue code — OAuth on connect, no API key
 to paste.
 
 ## What's inside
@@ -41,7 +41,8 @@ One click from the [cursor.directory listing](https://cursor.directory/plugins/a
 }
 ```
 
-Cursor opens an OAuth window the first time the agent calls a tool.
+Cursor flags the server "Needs login" as soon as it's added — click it and
+approve in the browser.
 
 ### Claude Code
 
@@ -50,8 +51,9 @@ Cursor opens an OAuth window the first time the agent calls a tool.
 /plugin install alphai@alphai
 ```
 
-Claude Code asks you to approve the MCP server on install; the first tool call
-opens your browser to authorize. (MCP only, without the plugin:
+Claude Code asks you to approve the MCP server on install and prompts for
+OAuth on connect — your browser opens to authorize (re-authenticate any time
+with `/mcp`). (MCP only, without the plugin:
 `claude mcp add --transport http alphai https://mcp.alphai.io/mcp`.)
 
 ### Any Open Plugins host
