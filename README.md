@@ -15,7 +15,7 @@ to paste.
 
 | Component | What it does |
 |---|---|
-| **MCP server** (`.mcp.json`) | Hosted at `https://mcp.alphai.io/mcp` — news search, per-ticker feeds, trending, SEC Form 4 insider trades, two-ticker analysis, news alerts (OAuth 2.1) |
+| **MCP server** (`.mcp.json`) | Hosted at `https://mcp.alphai.io/mcp` — news search, per-ticker feeds, trending, SEC Form 4 insider trades, earnings reads, macro tape/calendar, two-ticker analysis, news alerts (OAuth 2.1) |
 | **5 skills** (`skills/`) | `stock-brief` · `market-pulse` · `insider-radar` · `peer-readacross` · `manage-alerts` — finance workflows that teach the agent when and how to use the tools |
 | **1 rule** (`rules/`) | Prefer `alphai_*` tools over generic web search for financial-news tasks; frame output as research, not advice |
 

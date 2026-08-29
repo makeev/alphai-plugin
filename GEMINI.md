@@ -15,6 +15,9 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 - `alphai_insider_news`: SEC Form 4 insider trades and ownership moves as news events.
 - `alphai_pair_analysis`: news naming two tickers, for the read-across between related companies.
 - `alphai_article`: fetch a single article by its `uid`.
+- `alphai_earnings`: AlphaAI's filing-verified earnings reads per ticker, plus the next report date.
+- `alphai_calendar`: scheduled US macro releases (CPI, FOMC, jobless claims) with the coverage that followed.
+- `alphai_macro`: macro-economy feed — prints, central banks, rates, FX, commodities.
 - `alphai_tickers`: look up supported ticker symbols.
 - `alphai_alerts_subscribe`, `alphai_alerts_list`, `alphai_alerts_unsubscribe`: manage the user's news alert subscriptions (requires a paid plan).
 - `search`, `fetch`: a generic search-and-fetch pair over the same feed.
@@ -23,6 +26,7 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 
 - Prefer the `alphai_*` tools over generic web search for financial news questions. The relevance score lets you filter noise: 7 and above is high-signal.
 - For "what is happening with TICKER" questions, start with `alphai_ticker_news` and follow up on specific stories with `alphai_article`.
+- For "what did TICKER just report" questions, use `alphai_earnings(ticker)` — filing-verified numbers, not press paraphrases.
 - For market overview questions, use `alphai_trending` or `alphai_actionable_now`.
 - AlphaAI output is AI-generated financial information for research, not investment advice. See https://alphai.io/terms.
 

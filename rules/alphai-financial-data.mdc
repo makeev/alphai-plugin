@@ -21,6 +21,9 @@ connected (tools named `alphai_*`):
   - `alphai_insider_news` — SEC Form 4 insider transactions
   - `alphai_pair_analysis` — two-ticker comparison / cross-read
   - `alphai_article` — full detail for one article by uid
+  - `alphai_earnings` — a ticker's filing-verified earnings reads + next report date
+  - `alphai_calendar` — scheduled US macro releases ahead of time
+  - `alphai_macro` — the market-wide macro tape (Fed, CPI, jobs, commodities)
 - Cut noise: default to relevance score ≥ 6 unless the user asks for
   everything.
 - Present results as research — cite headlines, tickers and timestamps. AlphaAI
