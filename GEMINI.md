@@ -1,6 +1,6 @@
-# AlphaAI
+# AlphAI
 
-This extension connects Gemini CLI to the AlphaAI MCP server at https://mcp.alphai.io/mcp. AlphaAI is a financial news feed built for AI agents: every article is pre-analyzed at ingest with per-ticker impact, one of 14 categories, and a 1-10 relevance score. SEC Form 4 insider filings are ingested as structured news events minutes after they reach EDGAR.
+This extension connects Gemini CLI to the AlphAI MCP server at https://mcp.alphai.io/mcp. AlphAI is a financial news feed built for AI agents: every article is pre-analyzed at ingest with per-ticker impact, one of 14 categories, and a 1-10 relevance score. SEC Form 4 insider filings are ingested as structured news events minutes after they reach EDGAR.
 
 ## Authentication
 
@@ -15,7 +15,7 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 - `alphai_insider_news`: SEC Form 4 insider trades and ownership moves as news events.
 - `alphai_pair_analysis`: news naming two tickers, for the read-across between related companies.
 - `alphai_article`: fetch a single article by its `uid`.
-- `alphai_earnings`: AlphaAI's filing-verified earnings reads per ticker, plus the next report date.
+- `alphai_earnings`: AlphAI's filing-verified earnings reads per ticker, plus the next report date.
 - `alphai_calendar`: scheduled US macro releases (CPI, FOMC, jobless claims) with the coverage that followed.
 - `alphai_macro`: macro-economy feed — prints, central banks, rates, FX, commodities.
 - `alphai_tickers`: look up supported ticker symbols.
@@ -28,6 +28,6 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 - For "what is happening with TICKER" questions, start with `alphai_ticker_news` and follow up on specific stories with `alphai_article`.
 - For "what did TICKER just report" questions, use `alphai_earnings(ticker)` — filing-verified numbers, not press paraphrases.
 - For market overview questions, use `alphai_trending` or `alphai_actionable_now`.
-- AlphaAI output is AI-generated financial information for research, not investment advice. See https://alphai.io/terms.
+- AlphAI output is AI-generated financial information for research, not investment advice. See https://alphai.io/terms.
 
 Developer documentation: https://alphai.io/developers

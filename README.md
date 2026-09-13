@@ -1,11 +1,11 @@
-# AlphaAI plugin
+# AlphAI plugin
 
-[AlphaAI](https://alphai.io) for your agent — AI-enriched financial news, SEC
+[AlphAI](https://alphai.io) for your agent — AI-enriched financial news, SEC
 Form 4 insider trades and market signals, packaged in the
 [Open Plugins](https://open-plugins.com) format for Cursor, Claude Code and any
 compatible host.
 
-Every article in the AlphaAI feed is pre-analyzed at ingest: per-ticker impact,
+Every article in the AlphAI feed is pre-analyzed at ingest: per-ticker impact,
 a category, and a 1–10 relevance score. SEC Form 4 insider filings become
 scored, structured events minutes after they hit EDGAR. This plugin wires that
 feed into your agent with zero glue code — OAuth on connect, no API key
@@ -58,7 +58,7 @@ with `/mcp`). (MCP only, without the plugin:
 
 ### Headless (n8n, bots, CI)
 
-No browser on the box? The same `ak_live_` API keys that call the AlphaAI
+No browser on the box? The same `ak_live_` API keys that call the AlphAI
 REST API also authenticate the MCP server. Send one as a static Bearer
 header and skip OAuth entirely:
 
@@ -91,7 +91,7 @@ Docs and live playground: [alphai.io/developers](https://alphai.io/developers).
 
 ## Disclaimer
 
-AlphaAI output is AI-generated financial information for **research, not
+AlphAI output is AI-generated financial information for **research, not
 investment advice** — see [alphai.io/terms](https://alphai.io/terms).
 
 ## License
