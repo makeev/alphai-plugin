@@ -6,6 +6,7 @@
   "homepage": "https://alphai.io/developers",
   "repository": "https://github.com/makeev/alphai-plugin",
   "license": "MIT",
+  "privacyPolicyUrl": "https://alphai.io/privacy",
   "keywords": [
     "financial-news",
     "stock-market",
