@@ -14,7 +14,8 @@ connected (tools named `alphai_*`):
   at ingest (per-ticker impact, category, 1–10 relevance score), deduplicated
   and timestamped, so results are machine-usable without scraping.
 - Route by question:
-  - `alphai_trending` — what's moving across the market right now
+  - `alphai_stories` — the events of the last 48h with two or more publishers, summarised; `alphai_story` opens one by `story_id`
+  - `alphai_trending` — top single articles across the market right now
   - `alphai_actionable_now` — breaking, decision-grade items only
   - `alphai_ticker_news` — one ticker's feed
   - `alphai_news_search` — filtered or free-text search over the feed

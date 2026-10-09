@@ -10,7 +10,9 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 
 - `alphai_news_search`: search the news feed with a free-text query or filters (tickers, category, date range, minimum relevance score).
 - `alphai_ticker_news`: latest news for one ticker.
-- `alphai_trending`: the biggest stories of the last 48 hours, ranked by relevance.
+- `alphai_trending`: the top articles of the last 48 hours, ranked by relevance, reprints collapsed.
+- `alphai_stories`: stories — events two or more publishers reported, each summarised from its articles; `list="top"` ranks the last 48 hours, `list="latest"` pages newest-first.
+- `alphai_story`: one story by `story_id` (every news item carries it): summary, key facts with sources, per-ticker read, open questions, and the articles behind it.
 - `alphai_actionable_now`: breaking, decision-grade news filtered for actionability and novelty.
 - `alphai_insider_news`: SEC Form 4 insider trades as news events (`is_10b5_1=false` keeps discretionary trades only).
 - `alphai_insider_clusters`: issuers where several insiders bought on the open market in one run.
@@ -30,7 +32,7 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 - Prefer the `alphai_*` tools over generic web search for financial news questions. The relevance score lets you filter noise: 7 and above is high-signal.
 - For "what is happening with TICKER" questions, start with `alphai_ticker_news` and follow up on specific stories with `alphai_article`.
 - For "what did TICKER just report" questions, use `alphai_earnings(ticker)` — filing-verified numbers, not press paraphrases.
-- For market overview questions, use `alphai_trending` or `alphai_actionable_now`.
+- For market overview questions, use `alphai_stories` (events with independent coverage, summarised), `alphai_trending` (single articles) or `alphai_actionable_now` (breaking only).
 - AlphAI output is AI-generated financial information for research, not investment advice. See https://alphai.io/terms.
 
 Developer documentation: https://alphai.io/developers
