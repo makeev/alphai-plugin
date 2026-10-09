@@ -19,6 +19,7 @@ connected (tools named `alphai_*`):
   - `alphai_ticker_news` — one ticker's feed
   - `alphai_news_search` — filtered or free-text search over the feed
   - `alphai_insider_news` — SEC Form 4 insider transactions
+  - `alphai_insider_clusters` — cluster buying by several insiders
   - `alphai_pair_analysis` — two-ticker comparison / cross-read
   - `alphai_article` — full detail for one article by uid
   - `alphai_earnings` — a ticker's filing-verified earnings reads + next report date
