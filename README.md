@@ -25,6 +25,13 @@ Skills are mirrored from
 
 ## Install
 
+### ChatGPT
+
+AlphAI is in the [ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ac9df3f46e88191914f16c4af63ce64): click **Install plugin**,
+then sign in to AlphAI and approve access. The ChatGPT listing carries the MCP
+server; the skills and the rule in this repo are for Cursor, Claude Code and
+other Open Plugins hosts.
+
 ### Cursor
 
 One click from the [cursor.directory listing](https://cursor.directory/plugins/alphai)
