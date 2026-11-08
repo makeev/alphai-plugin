@@ -1,0 +1,33 @@
+{
+  "name": "alphai",
+  "displayName": "AlphAI",
+  "version": "1.0.0",
+  "description": "Financial news and SEC filings for your agent: scored articles with source links, multi-publisher stories, Form 4 insider trades and earnings reads. Hosted MCP with OAuth and a free plan, plus five ready-made skills.",
+  "author": {
+    "name": "AlphAI",
+    "email": "info@alphai.io"
+  },
+  "publisher": "AlphAI",
+  "homepage": "https://alphai.io/mcp",
+  "repository": "https://github.com/makeev/alphai-plugin",
+  "license": "MIT",
+  "logo": "assets/icon.png",
+  "keywords": [
+    "financial-news",
+    "stock-market",
+    "sec-filings",
+    "insider-trading",
+    "earnings",
+    "mcp",
+    "ai-agents",
+    "trading"
+  ],
+  "category": "integrations",
+  "tags": [
+    "finance",
+    "news",
+    "sec-filings",
+    "mcp"
+  ],
+  "mcpServers": "./.mcp.json"
+}
