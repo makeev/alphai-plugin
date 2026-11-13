@@ -19,7 +19,7 @@ connected (tools named `alphai_*`):
   - `alphai_actionable_now` — breaking, decision-grade items only
   - `alphai_ticker_news` — one ticker's feed; `event_type` keeps one kind of corporate event (buybacks, dividends, offerings, M&A, management changes, guidance)
   - `alphai_news_search` — filtered or free-text search over the feed; `event_type` does the same across the market, not together with `query`
-  - `alphai_insider_news` — SEC Form 4 insider transactions
+  - `alphai_insider_news` — SEC Form 4 insider transactions; `decision="discretionary"` keeps the sales an insider chose to make
   - `alphai_insider_clusters` — cluster buying by several insiders
   - `alphai_pair_analysis` — two-ticker comparison / cross-read
   - `alphai_article` — full detail for one article by uid
@@ -32,6 +32,13 @@ connected (tools named `alphai_*`):
   release carry an `event` block. Take amounts, dates and names from
   `event.facts` and `event.also`, not from headlines. `verified: false` means
   a quoted fact could not be found in the document and was left out.
+- A Form 4 sale carries `decision` and `decision_reason` in its `insider`
+  block: `discretionary` (the insider chose to sell), `plan_like` (a 10b5-1
+  plan, or paperwork such as a tax sale on vesting or an option exercise cover)
+  or `unknown` (the filing does not say enough to tell). Call a sale chosen
+  only when the label is `discretionary`, not because `is_10b5_1` is false.
+  Purchases and other transaction codes carry `null`. When the label on a sale
+  is `unknown` or missing, say that plainly instead of guessing.
 - Present results as research — cite headlines, tickers and timestamps. AlphAI
   output is AI-generated financial information, not investment advice; say so
   if the user asks for a buy/sell decision (see alphai.io/terms).
