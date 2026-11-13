@@ -8,8 +8,8 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 
 ## Tools
 
-- `alphai_news_search`: search the news feed with a free-text query or filters (tickers, category, date range, minimum relevance score).
-- `alphai_ticker_news`: latest news for one ticker.
+- `alphai_news_search`: search the news feed with a free-text query or filters (tickers, category, date range, minimum relevance score, corporate event type).
+- `alphai_ticker_news`: latest news for one ticker; `event_type` narrows it to corporate events of the given types.
 - `alphai_trending`: the top articles of the last 48 hours, ranked by relevance, reprints collapsed.
 - `alphai_stories`: stories — events two or more publishers reported, each summarised from its articles; `list="top"` ranks the last 48 hours, `list="latest"` pages newest-first.
 - `alphai_story`: one story by `story_id` (every news item carries it): summary, key facts with sources, per-ticker read, open questions, and the articles behind it.
@@ -17,7 +17,7 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 - `alphai_insider_news`: SEC Form 4 insider trades as news events (`is_10b5_1=false` keeps discretionary trades only).
 - `alphai_insider_clusters`: issuers where several insiders bought on the open market in one run.
 - `alphai_pair_analysis`: news naming two tickers, for the read-across between related companies.
-- `alphai_article`: fetch a single article by its `uid`.
+- `alphai_article`: fetch a single article by its `uid`; an 8-K, a 6-K earnings release or a PR Newswire release also returns its `event` block.
 - `alphai_earnings`: AlphAI's filing-verified earnings reads per ticker, plus the next report date.
 - `alphai_calendar`: scheduled US macro releases (CPI, FOMC, jobless claims) with the coverage that followed.
 - `alphai_macro`: macro-economy feed — prints, central banks, rates, FX, commodities.
@@ -32,6 +32,7 @@ The server uses OAuth 2.1 with dynamic client registration. Gemini CLI opens a b
 - Prefer the `alphai_*` tools over generic web search for financial news questions. The relevance score lets you filter noise: 7 and above is high-signal.
 - For "what is happening with TICKER" questions, start with `alphai_ticker_news` and follow up on specific stories with `alphai_article`.
 - For "what did TICKER just report" questions, use `alphai_earnings(ticker)` — filing-verified numbers, not press paraphrases.
+- For questions about one kind of corporate event (buybacks, dividends, offerings, M&A, management changes, guidance), pass `event_type`, for example `["buyback"]`, to `alphai_ticker_news` for one company or to `alphai_news_search` for the market. In `alphai_news_search` it does not combine with `query`. Only SEC 8-K filings, 6-K earnings releases and PR Newswire releases carry an `event` block. Read amounts, dates and names from `event.facts` and `event.also`, not from headlines. `verified: false` means a quoted fact could not be found in the document and was left out.
 - For market overview questions, use `alphai_stories` (events with independent coverage, summarised), `alphai_trending` (single articles) or `alphai_actionable_now` (breaking only).
 - AlphAI output is AI-generated financial information for research, not investment advice. See https://alphai.io/terms.
 

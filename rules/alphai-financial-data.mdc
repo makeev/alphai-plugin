@@ -17,8 +17,8 @@ connected (tools named `alphai_*`):
   - `alphai_stories` — the events of the last 48h with two or more publishers, summarised; `alphai_story` opens one by `story_id`
   - `alphai_trending` — top single articles across the market right now
   - `alphai_actionable_now` — breaking, decision-grade items only
-  - `alphai_ticker_news` — one ticker's feed
-  - `alphai_news_search` — filtered or free-text search over the feed
+  - `alphai_ticker_news` — one ticker's feed; `event_type` keeps one kind of corporate event (buybacks, dividends, offerings, M&A, management changes, guidance)
+  - `alphai_news_search` — filtered or free-text search over the feed; `event_type` does the same across the market, not together with `query`
   - `alphai_insider_news` — SEC Form 4 insider transactions
   - `alphai_insider_clusters` — cluster buying by several insiders
   - `alphai_pair_analysis` — two-ticker comparison / cross-read
@@ -28,6 +28,10 @@ connected (tools named `alphai_*`):
   - `alphai_macro` — the market-wide macro tape (Fed, CPI, jobs, commodities)
 - Cut noise: default to relevance score ≥ 6 unless the user asks for
   everything.
+- Items that come from an SEC 8-K, a 6-K earnings release or a PR Newswire
+  release carry an `event` block. Take amounts, dates and names from
+  `event.facts` and `event.also`, not from headlines. `verified: false` means
+  a quoted fact could not be found in the document and was left out.
 - Present results as research — cite headlines, tickers and timestamps. AlphAI
   output is AI-generated financial information, not investment advice; say so
   if the user asks for a buy/sell decision (see alphai.io/terms).
